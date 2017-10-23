@@ -20,6 +20,7 @@ public class Vetor {
     //    }
 
     public void adiciona(String pElemento) throws IndexOutOfBoundsException {
+	aumentaCapacidadeVetor();
 	if (tamanhoRealVetor < this.elementos.length) {
 	    this.elementos[tamanhoRealVetor] = pElemento;
 	    tamanhoRealVetor++;
@@ -30,6 +31,7 @@ public class Vetor {
     }
 
     public void adicionaNaPosicao(int pPosicao, String pElemento) {
+	aumentaCapacidadeVetor();
 	verificaSePosicaoExiste(pPosicao);
 	for (int i = this.tamanhoRealVetor; i > pPosicao; i--) {
 	    this.elementos[i] = this.elementos[i - 1];
@@ -70,6 +72,16 @@ public class Vetor {
 	    s.append(",");
 	}
 	return s.toString();
+    }
+
+    private void aumentaCapacidadeVetor() {
+	if (this.tamanhoRealVetor == this.elementos.length) {
+	    String[] elementosNovos = new String[elementos.length * 2];
+	    for (int i = 0; i < elementos.length; i++) {
+		elementosNovos[i] = elementos[i];
+	    }
+	    elementos = elementosNovos;
+	}
     }
 
     private void verificaSePosicaoExiste(final int pPosicao) {
