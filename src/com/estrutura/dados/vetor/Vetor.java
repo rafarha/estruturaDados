@@ -59,6 +59,14 @@ public class Vetor {
 	return this.tamanhoRealVetor;
     }
 
+    public void removerElementoNaPosicao(int pPosicao) {
+	verificaSePosicaoExiste(pPosicao);
+	for (int i = pPosicao; i < tamanhoRealVetor; i++) {
+	    elementos[i] = elementos[i + 1];
+	}
+	tamanhoRealVetor--;
+    }
+
     @Override public String toString() {
 	StringBuilder s = new StringBuilder();
 	s.append("[");
