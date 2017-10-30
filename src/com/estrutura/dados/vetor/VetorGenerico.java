@@ -46,6 +46,10 @@ public class VetorGenerico<T> {
 	return this.elementos[pPosicao];
     }
 
+    public boolean contem(T pElemento) {
+	return buscarElementoVetorPorConteudo(pElemento) > -1;
+    }
+
     public int getTamanhoRealVetor() {
 	return this.tamanhoRealVetor;
     }
@@ -71,6 +75,10 @@ public class VetorGenerico<T> {
 	    s.append(",");
 	}
 	return s.toString();
+    }
+
+    public int ultimoIndice() {
+	return tamanhoRealVetor - 1;
     }
 
     private void aumentaCapacidadeVetor() {
