@@ -3,6 +3,8 @@ package com.estrutura.dados.vetor.teste;
 import com.estrutura.dados.domain.Contato;
 import com.estrutura.dados.vetor.VetorGenerico;
 
+import java.io.File;
+
 public class VetorGenericoAula11Test {
 
     public static void main(String[] args) {
@@ -29,6 +31,10 @@ public class VetorGenericoAula11Test {
 	}
 	System.out.println(vetorGenerico.contem(c4));
 	System.out.println("Ultimo indice é: " + vetorGenerico.ultimoIndice());
+	System.out.println(vetorGenerico);
+	vetorGenerico.removerPorElemento(c2);
+	File file = new File("teste.txt");
+	System.out.println("teste");
 
     }
 }

@@ -62,6 +62,10 @@ public class VetorGenerico<T> {
 	tamanhoRealVetor--;
     }
 
+    public void removerPorElemento(T pElemento) {
+	removerElementoNaPosicao(buscarElementoVetorPorConteudo(pElemento));
+    }
+
     @Override public String toString() {
 	StringBuilder s = new StringBuilder();
 	s.append("[");
