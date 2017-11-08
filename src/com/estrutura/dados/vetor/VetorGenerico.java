@@ -54,6 +54,17 @@ public class VetorGenerico<T> {
 	return this.tamanhoRealVetor;
     }
 
+    public void limpar() {
+	while (tamanhoRealVetor >= 0) {
+	    elementos[tamanhoRealVetor] = null;
+	    tamanhoRealVetor--;
+	}
+    }
+
+    public Object obtem(int pIndice) {
+	return buscarElementoVetorPorPosicao(pIndice);
+    }
+
     public void removerElementoNaPosicao(int pPosicao) {
 	verificaSePosicaoExiste(pPosicao);
 	for (int i = pPosicao; i < tamanhoRealVetor; i++) {
