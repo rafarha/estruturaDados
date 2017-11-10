@@ -16,5 +16,7 @@ public class ExerciciosVetor {
 	}
 	System.out.println(vetorGenerico.toString());
 	List<Contato> contatoList = new ArrayList<Contato>();
+	vetorGenerico.copiarVetorParaArray(contatoList);
+	System.out.println(contatoList.toString());
     }
 }

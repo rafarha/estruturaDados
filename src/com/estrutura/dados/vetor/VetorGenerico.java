@@ -1,5 +1,7 @@
 package com.estrutura.dados.vetor;
 
+import java.util.List;
+
 public class VetorGenerico<T> {
     private T[] elementos;
 
@@ -48,6 +50,12 @@ public class VetorGenerico<T> {
 
     public boolean contem(T pElemento) {
 	return buscarElementoVetorPorConteudo(pElemento) > -1;
+    }
+
+    public void copiarVetorParaArray(List<T> pVetorList) {
+	for (int i = 0; i < tamanhoRealVetor; i++) {
+	    pVetorList.add(elementos[i]);
+	}
     }
 
     public int getTamanhoRealVetor() {
