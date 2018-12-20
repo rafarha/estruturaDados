@@ -5,26 +5,26 @@ import java.awt.*;
 
 public class MinhaJanela extends JFrame {
 
-    private JTextField field = new JTextField();
+    public void janela() {
+	//Criando e setando uma nova Janela
+	JFrame frame = new JFrame("Teste");
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	JLabel label1 = new JLabel("Digite uma das opções acima:");
+	JTextField field1 = new JTextField(15);
 
-    private JLabel label = new JLabel();
+	//Setando o conteudo da Janela
+	Container container = frame.getContentPane();
+	SpringLayout springLayout = new SpringLayout();
+	container.setLayout(springLayout);
+	container.add(new JLabel("Label 01: "));
+	container.add(new JTextField("Text Field: ", 15));
+	springLayout.putConstraint(SpringLayout.HEIGHT, field1, 50, SpringLayout.HEIGHT, container);
 
-    private JTextArea texto = new JTextArea();
+	//Mostrar a Janela
+	frame.setSize(300, 300);
+	frame.pack();
+	frame.setVisible(true);
 
-    public MinhaJanela() {
-	//Define o título da janela
-	super("Meu Notepad");
-	setVisible(true);
-	setSize(640, 480);
-	setBackground(Color.BLACK);
-	field.setSize(14, 14);
-	this.montaJanela();
     }
 
-    private void montaJanela() {
-	label.setName("Opção :");
-	this.getContentPane().add(label);
-	this.getContentPane().add(field);
-
-    }
 }

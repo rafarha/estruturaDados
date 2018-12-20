@@ -11,14 +11,18 @@ public class TesteJogos {
 
     public static final String nomeArquivoMegaFull = "resources/megaSena.txt";
 
+    public static final String nomeArquivoQuinaFull = "resources/quina.txt";
+
     public static void main(String[] args) throws Exception {
 	Scanner scanner = new Scanner(System.in);
-	MinhaJanela minhaJanela = new MinhaJanela();
+	final MinhaJanela minhaJanela = new MinhaJanela();
 	ContadorNumerosSorteados contadorNumerosSorteados = new ContadorNumerosSorteados();
+	//	minhaJanela.janela();
 
 	System.out.println("Digite uma Opção: ");
 	System.out.println("M - Mega Sena ");
 	System.out.println("L - Lotofácil ");
+	System.out.println("Q - Quina ");
 	System.out.println("0 - Sair do Programa");
 
 	String entradaTeclado = "";
@@ -28,6 +32,8 @@ public class TesteJogos {
 		contadorNumerosSorteados.contabilizarNumerosPorConcurso(nomeArquivoMegaFull);
 	    } else if (entradaTeclado.equalsIgnoreCase("L")) {
 		contadorNumerosSorteados.contabilizarNumerosPorConcurso(nomeArquivoLotoFacilFull);
+	    } else if (entradaTeclado.equalsIgnoreCase("Q")) {
+		contadorNumerosSorteados.contabilizarNumerosPorConcurso(nomeArquivoQuinaFull);
 	    } else if (entradaTeclado.equalsIgnoreCase("0")) {
 		break;
 	    } else {
