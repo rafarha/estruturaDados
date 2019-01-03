@@ -10,6 +10,8 @@ public class SortAlgorithms {
 	System.out.println("Resultado Ordenação BubbleSort: " + toString(bubbleSort(arrayParaOrdenar)));
 	System.out.println("Resultado Ordenação SelectionSort: " + toString(selectionSort(arrayParaOrdenar)));
 	System.out.println("Resultado Ordenação InsertSort: " + toString(insertionSort(arrayParaOrdenar)));
+	System.out.println("Resultado Ordenação QuickSort: " + toString(
+			quickSort(arrayParaOrdenar, 0, arrayParaOrdenar.length - 1)));
 
     }
 
@@ -53,7 +55,29 @@ public class SortAlgorithms {
 
     }
 
-    static int[] quickSort(int[] pArray) {
+    static int[] quickSort(int[] pArray, int menor, int maior) {
+	int[] array = pArray.clone();
+	int meioArray = (menor+maior)/2;
+	int pivo = array[meioArray];
+	int i = menor;
+	int j = maior;
+
+	//Pivo mais a esquerda
+	array[meioArray] = array[i];
+	array[i] = pivo;
+	i++;
+
+	while(i <= j){
+	    if(array[i]< pivo){
+	        
+
+	    }
+
+
+
+	}
+
+	
 	return null;
     }
 
