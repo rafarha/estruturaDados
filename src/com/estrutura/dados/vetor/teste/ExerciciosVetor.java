@@ -18,5 +18,14 @@ public class ExerciciosVetor {
 	List<Contato> contatoList = new ArrayList<Contato>();
 	vetorGenerico.copiarVetorParaArray(contatoList);
 	System.out.println(contatoList.toString());
+	vetorGenerico.limpar();
+	Contato contato1 = new Contato("Rafael", "19-981123212", "Rafael.rha@gmail.com");
+	Contato contato2 = new Contato("Joao", "19-981123212", "Rafael.rha@gmail.com");
+	Contato contato3 = new Contato("DUDU", "19-981123212", "Rafael.rha@gmail.com");
+	vetorGenerico.adiciona(contato1);
+	vetorGenerico.adiciona(contato2);
+	vetorGenerico.adiciona(contato3);
+	vetorGenerico.adiciona(contato1);
+	System.out.println("A Ultima posção do elemento C1: " + vetorGenerico.ultimoIndice(contato1));
     }
 }

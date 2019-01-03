@@ -65,7 +65,11 @@ public class VetorGenerico<T> {
     public void limpar() {
 	while (tamanhoRealVetor >= 0) {
 	    elementos[tamanhoRealVetor] = null;
+	    if (tamanhoRealVetor == 0) {
+		break;
+	    }
 	    tamanhoRealVetor--;
+
 	}
     }
 
@@ -100,8 +104,13 @@ public class VetorGenerico<T> {
 	return s.toString();
     }
 
-    public int ultimoIndice() {
-	return tamanhoRealVetor - 1;
+    public int ultimoIndice(final T pElemento) {
+	for (int i = tamanhoRealVetor - 1; i >= 0; i--) {
+	    if (elementos[i].equals(pElemento)) {
+		return i;
+	    }
+	}
+	return -1;
     }
 
     private void aumentaCapacidadeVetor() {

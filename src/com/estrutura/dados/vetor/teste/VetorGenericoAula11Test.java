@@ -28,7 +28,7 @@ public class VetorGenericoAula11Test {
 	    System.out.println("Contato não cadastrao no vetor");
 	}
 	System.out.println(vetorGenerico.contem(c4));
-	System.out.println("Ultimo indice é: " + vetorGenerico.ultimoIndice());
+//	System.out.println("Ultimo indice é: " + vetorGenerico.ultimoIndice());
 	System.out.println(vetorGenerico);
 	vetorGenerico.removerPorElemento(c2);
 
