@@ -5,12 +5,43 @@ import java.util.ArrayList;
 public class SortAlgorithms {
 
     public static void main(String arg[]) {
-	int[] arrayParaOrdenar = { 3, 5, 1, 2, 4 };
+	int[] arrayParaOrdenar = { 8, 2, 1, 10, 9, 11, 0 };
 	ArrayList<Integer> array = new ArrayList<Integer>();
-	System.out.println("Resultado Ordenação BubbleSort: " + toString(bubbleSort(arrayParaOrdenar)));
-	System.out.println("Resultado Ordenação SelectionSort: " + toString(selectionSort(arrayParaOrdenar)));
-	System.out.println("Resultado Ordenação InsertSort: " + toString(insertionSort(arrayParaOrdenar)));
+	//	System.out.println("Resultado Ordenação BubbleSort: " + toString(bubbleSort(arrayParaOrdenar)));
+	//	System.out.println("Resultado Ordenação SelectionSort: " + toString(selectionSort(arrayParaOrdenar)));
+	//	System.out.println("Resultado Ordenação InsertSort: " + toString(insertionSort(arrayParaOrdenar)));
+	System.out.println("Resultado Ordenação QuicktSort: " + toString(
+			quickSort(arrayParaOrdenar, 0, arrayParaOrdenar.length - 1)));
 
+    }
+
+    private static int separador(final int[] pArray, final int pEsq, final int pDir) {
+	int i = pEsq;
+	int j = pDir;
+	int pivo = pArray[pEsq];
+	while (i <= j) {
+	    //Encontrar o indice da esquerda que será trocado com o indice da direita
+	    if (pArray[i] <= pivo) {
+		i++;
+		//Encontrar o indice da direita que será trocado com o indice da esquerda;
+	    } else if (pArray[j] > pivo) {
+		j--;
+	    } else if (i <= j) {
+		trocar(pArray, i, j);
+		//incrementar i e decrementar j
+		i++;
+		j--;
+	    }
+	}
+	//reposiciono o PIVO
+	trocar(pArray, pEsq, j);
+	return j;
+    }
+
+    private static void trocar(final int[] pArray, final int pEsq, final int pJ) {
+	int aux = pArray[pJ];
+	pArray[pJ] = pArray[pEsq];
+	pArray[pEsq] = aux;
     }
 
     static int[] bubbleSort(int[] pArray) {
@@ -53,8 +84,15 @@ public class SortAlgorithms {
 
     }
 
-    static int[] quickSort(int[] pArray) {
-	return null;
+    static int[] quickSort(int[] pArray, int esq, int dir) {
+	int[] array = pArray.clone();
+	if (esq < dir) {
+	    int indicePivo = separador(array, esq, dir);
+	    quickSort(array, indicePivo+1, dir);
+	    quickSort(array, esq, indicePivo-1);
+	}
+
+	return array;
     }
 
     static int[] selectionSort(int[] pArray) {
